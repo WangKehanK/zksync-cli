@@ -10,8 +10,9 @@ import figlet from 'figlet';
 import create from './create';
 import deposit from './deposit';
 import withdraw from './withdraw';
+import transantions from './transactions';
 
-const availableOptions: string[] = ['create', 'deposit', 'withdraw'];
+const availableOptions: string[] = ['create', 'deposit', 'withdraw', 'transactions'];
 
 // second argument should be the selected option
 const option: string = process.argv[2];
@@ -43,4 +44,11 @@ switch (option) {
   case 'withdraw':
     withdraw();
     break;
+  case 'transactions':
+    transantions({
+      // @ts-ignore
+      option: process.argv[3],
+      args: process.argv.slice(4),
+    })
+    break
 }
