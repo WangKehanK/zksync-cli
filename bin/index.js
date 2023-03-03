@@ -12,7 +12,8 @@ const figlet_1 = __importDefault(require("figlet"));
 const create_1 = __importDefault(require("./create"));
 const deposit_1 = __importDefault(require("./deposit"));
 const withdraw_1 = __importDefault(require("./withdraw"));
-const availableOptions = ['create', 'deposit', 'withdraw'];
+const wizard_1 = __importDefault(require("./wizard"));
+const availableOptions = ['create', 'deposit', 'withdraw', 'wizard'];
 // second argument should be the selected option
 const option = process.argv[2];
 if (!availableOptions.includes(option)) {
@@ -32,5 +33,8 @@ switch (option) {
         break;
     case 'withdraw':
         (0, withdraw_1.default)();
+        break;
+    case 'wizard':
+        (0, wizard_1.default)();
         break;
 }
