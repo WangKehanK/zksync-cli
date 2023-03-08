@@ -13,7 +13,7 @@ const contractTypeQuestion: QuestionCollection = [
 
 const erc20questions: QuestionCollection = [
   {
-    message: "Want to save the contract to path (default: current path): /path/to/contract.sol",
+    message: "Save the contract to path (default: current path): /path/to/contract.sol",
     name: "savePath",
     type: "input",
   },
@@ -26,12 +26,17 @@ const erc20questions: QuestionCollection = [
     message: "Token symbol:",
     name: "tokenSymbol",
     type: "input",
+  },
+  {
+    message: "Burnable? (y/n)",
+    name: "burnable",
+    type: "input",
   }
 ];
 
 const erc721questions: QuestionCollection = [
     {
-      message: "Want to save the contract to path (default: current path): /path/to/contract.sol",
+      message: "Save the contract to path (default: current path): /path/to/contract.sol",
       name: "savePath",
       type: "input",
     },
@@ -49,7 +54,7 @@ const erc721questions: QuestionCollection = [
 
 const erc1155questions: QuestionCollection = [
     {
-      message: "Want to save the contract to path (default: current path): /path/to/contract.sol",
+      message: "Save the contract to path (default: current path): /path/to/contract.sol",
       name: "savePath",
       type: "input",
     },

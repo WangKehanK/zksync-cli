@@ -16,12 +16,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const chalk_1 = __importDefault(require("chalk"));
 const inquirer_1 = __importDefault(require("inquirer"));
 const questions_1 = require("./questions");
-const wizard_1 = require("@openzeppelin/wizard/");
+const wizard_1 = require("@openzeppelin/wizard");
 const promises_1 = __importDefault(require("fs/promises"));
 function saveFile(path, contractName, contract) {
     const filepath = path + contractName;
-    console.log(filepath);
-    //@ts-ignore
     try {
         promises_1.default.writeFile(filepath, contract);
         console.log(chalk_1.default.green("The file was saved to " + filepath));
@@ -49,9 +47,11 @@ function default_1() {
             switch (answers.contractType) {
                 case "erc20":
                     const answerERC20 = yield inquirer_1.default.prompt(questions_1.erc20questions);
+                    console.log(answerERC20.burnable);
                     contract = wizard_1.erc20.print({
                         name: answerERC20.tokenName,
-                        symbol: answerERC20.tokenSymbol
+                        symbol: answerERC20.tokenSymbol,
+                        burnable: answerERC20.burnable === "y" ? true : false
                     });
                     if (answerERC20.savePath != "") {
                         saveFilewithGivenPath(answerERC20.savePath, contract);

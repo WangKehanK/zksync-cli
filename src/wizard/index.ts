@@ -2,14 +2,12 @@
 import chalk from 'chalk';
 import inquirer from "inquirer";
 import { contractTypeQuestion, erc1155questions, erc20questions, erc721questions } from './questions';
-import { erc20, erc721, erc1155 } from '@openzeppelin/wizard/';
+import { erc20, erc721, erc1155 } from '@openzeppelin/wizard';
 import fs from 'fs/promises'; 
 
 
 function saveFile(path : string, contractName : string, contract : string){
     const filepath = path + contractName;
-    console.log(filepath);
-    //@ts-ignore
     try{
         fs.writeFile(filepath, contract); 
         console.log(chalk.green("The file was saved to " + filepath));
@@ -38,7 +36,8 @@ export default async function () {
                 const answerERC20 = await inquirer.prompt(erc20questions);
                 contract = erc20.print({
                     name: answerERC20.tokenName,
-                    symbol: answerERC20.tokenSymbol
+                    symbol: answerERC20.tokenSymbol,
+                    burnable: answerERC20.burnable === "y" ? true : false
                 });
                 if(answerERC20.savePath != "") {
                     saveFilewithGivenPath(answerERC20.savePath, contract);
