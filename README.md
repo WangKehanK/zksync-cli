@@ -2,7 +2,7 @@
 
 This CLI tool simplifies the process of developing applications and interacting with zkSync 2.0.
 
-All changes were split into three branches: feat/wallet, feat/wizard, feat/transaction
+All changes were split into three branches: [feat/wallet](https://github.com/WangKehanK/zksync-cli/tree/feat/wallet), [feat/wizard](https://github.com/WangKehanK/zksync-cli/tree/feat/wizard), [feat/transaction](https://github.com/WangKehanK/zksync-cli/tree/feat/transactions)
 
 ## Requirements
 
