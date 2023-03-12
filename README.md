@@ -2,6 +2,8 @@
 
 This CLI tool simplifies the process of developing applications and interacting with zkSync 2.0.
 
+All changes were split into three branches: feat/wallet, feat/wizard, feat/transaction
+
 ## Requirements
 
 - Node/NPM
